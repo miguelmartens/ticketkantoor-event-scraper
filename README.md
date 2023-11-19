@@ -14,12 +14,12 @@ To set up this project:
 
 1. Clone the repository:
   ```bash
-  git clone https://github.com/your-repository/ticketkantoor-scraper.git
+  git clone https://github.com/your-repository/ticketkantoor-event-scraper.git
   ```
 
 2. Navigate to the project directory:
   ```bash
-  cd ticketkantoor-scraper
+  cd ticketkantoor-event-scraper
   ```
 
 3. (Optional) Set up a virtual environment:
@@ -59,20 +59,20 @@ python main.py
 If you are using Docker, build the container with:
 
 ```bash
-docker build -t ticketkantoor-scraper .
+docker build -t ticketkantoor-event-scraper .
 ```
 
 And run it with:
 
 ```bash
-docker run -e TICKETKANTOOR_EMAIL=your_email -e TICKETKANTOOR_PASSWORD=your_password -e GRAPH_API_CLIENT_ID=your_client_id -e GRAPH_API_CLIENT_SECRET=your_client_secret -e GRAPH_API_TENANT_ID=your_tenant_id -e USER_OBJECT_ID=your_user_object_id -e RECIPIENT_EMAIL=your_recipient_email -e USE_EMAIL_UTILS=true -e EVENT_NAME="Your Event Name" ticketkantoor-scraper
+docker run -e TICKETKANTOOR_EMAIL=your_email -e TICKETKANTOOR_PASSWORD=your_password -e GRAPH_API_CLIENT_ID=your_client_id -e GRAPH_API_CLIENT_SECRET=your_client_secret -e GRAPH_API_TENANT_ID=your_tenant_id -e USER_OBJECT_ID=your_user_object_id -e RECIPIENT_EMAIL=your_recipient_email -e USE_EMAIL_UTILS=true -e EVENT_NAME="Your Event Name" ticketkantoor-event-scraper
 ```
 
 Remember to replace your_email, your_password, your_client_id, your_client_secret, your_tenant_id, your_user_object_id, your_recipient_email, and "Your Event Name" with your actual Ticketkantoor credentials, Microsoft Graph API credentials, and other configuration details.
 
 ### Explanation:
 
-1. **Docker Build Command**: This command builds a Docker image named `ticketkantoor-scraper` from the Dockerfile in the current directory.
+1. **Docker Build Command**: This command builds a Docker image named `ticketkantoor-event-scraper` from the Dockerfile in the current directory.
 
 2. **Docker Run Command**: This command runs the container from the built image. It includes setting environment variables using `-e`. These variables should be replaced with actual values for your application to function correctly.
 
