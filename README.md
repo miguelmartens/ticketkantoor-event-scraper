@@ -84,6 +84,43 @@ Remember to replace your_email, your_password, your_client_id, your_client_secre
 
 This section is critical for users who prefer Docker for deployment, ensuring they have clear instructions on how to containerize and run your application.
 
+## Creating and Pushing Tags for Docker Images
+Our project uses semantic versioning for Docker images, which is automated through GitHub Actions. Semantic versioning follows the MAJOR.MINOR.PATCH format, where:
+
+* MAJOR version is incremented for incompatible API changes,
+* MINOR version is incremented for added functionality in a backward-compatible manner,
+* PATCH version is incremented for backward-compatible bug fixes.
+
+To create a new version of the Docker image, follow these (example) steps:
+
+1. Create a Tag:
+    * Ensure you have committed all the changes that should go into the new version.
+    * Create a Git tag with the new version number, prefixed with v. For example, for version 1.0.0, use v1.0.0:
+
+    ```bash
+    git tag -a v1.0.0 -m "Release version 1.0.0"
+    ```
+
+    In the message, include a brief description or changelog of the release.
+
+2. Push the Tag to GitHub:
+    * Push the tag to your GitHub repository:
+
+    ```bash
+    git push origin v1.0.0
+    ```
+
+    * This push will trigger the GitHub Actions workflow, which builds and pushes the Docker image to Docker Hub.
+
+3. View on Docker Hub:
+    * Once the GitHub Actions workflow completes, the new Docker image with the tag v1.0.0 will be available on Docker Hub.
+    * Additionally, the latest tag on Docker Hub will be updated to this new version.
+
+### Best Practices
+* Stable Versions: Users who require stable versions of the Docker image should pull specific versioned tags from Docker Hub.
+* Latest Tag: The latest tag is always set to the most recent version. It's convenient but might not always be the most stable.
+* Version Consistency: Keep your versioning consistent and in line with the changes made in the code to maintain clarity for the users.
+
 ## Contributing
 Contributions to this project are welcome. Please ensure you follow the coding standards and write tests for new features.
 
