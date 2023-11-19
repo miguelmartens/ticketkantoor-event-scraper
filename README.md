@@ -27,7 +27,12 @@ To set up this project:
   python3 -m venv .venv
   source .venv/bin/activate  # On Windows use `.venv\Scripts\activate`
   ```
-  
+
+4. Install the requirements:
+  ```bash
+  pip3 install --no-cache-dir -r requirements.txt
+  ```
+
 ## Configuration
 Configure the application settings via environment variables. The required environment variables include:
 
