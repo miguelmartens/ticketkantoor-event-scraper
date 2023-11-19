@@ -17,6 +17,14 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
+      - name: Lint Bicep files
+        run: |
+          az bicep build --file main.bicep
+
+      - name: Bicep What-If Deployment
+        run: |
+          az deployment group what-if --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} --template-file main.bicep
+
       - name: Deploy to Azure using Bicep
         run: |
           az deployment group create --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} --template-file main.bicep
