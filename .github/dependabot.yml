@@ -1,0 +1,13 @@
+version: 2
+updates:
+  - package-ecosystem: "pip"  # Set the package manager to use (pip for Python)
+    directory: "/"            # Location of package manifests
+    schedule:
+      interval: "weekly"      # How often to check for updates
+    open-pull-requests-limit: 10
+
+  - package-ecosystem: "docker"  # For Docker images
+    directory: "/"               # Location of Dockerfile
+    schedule:
+      interval: "weekly"         # Frequency for Docker updates
+    open-pull-requests-limit: 5  # Limit for Docker pull requests
