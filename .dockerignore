@@ -1,0 +1,31 @@
+# Ignore the local virtual environment
+.venv
+
+# Additionally, it's common to ignore other files and directories
+# that are not necessary for the Docker build
+
+# Ignore all bytecode
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.pyc
+
+# Ignore development and test artifacts
+*.log
+*.sql
+*.sqlite
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore git history and configuration
+.git
+.gitignore
+
+# Ignore other unnecessary files
+.vscode
+.idea
+*.swp
+*.swo
+*~
