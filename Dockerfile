@@ -31,5 +31,8 @@ RUN mkdir -p /home/seluser/.cache/selenium \
 # Switch to the new non-root user for running the application
 USER appuser
 
+# Run tests
+RUN python3 -m unittest discover tests
+
 # Run the Python application on container startup
 CMD ["python3", "./main.py"]
