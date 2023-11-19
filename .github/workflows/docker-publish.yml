@@ -25,4 +25,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: yourusername/yourimagename:latest
+          tags: miguelmartens/ticketkantoor-scraper:latest
