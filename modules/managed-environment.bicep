@@ -3,7 +3,11 @@ param managedEnvironmentName string
 param customerId string
 param workloadProfileType string
 param workloadProfileName string
+param logAnalyticsWorkspaceName string
 
+resource logAnalyticsWorkspace 'Microsoft.OperationalInsights/workspaces@2022-10-01' existing = {
+  name: logAnalyticsWorkspaceName
+}
 resource managedEnvironment 'Microsoft.App/managedEnvironments@2023-05-02-preview' = {
   name: managedEnvironmentName
   location: location
@@ -12,6 +16,7 @@ resource managedEnvironment 'Microsoft.App/managedEnvironments@2023-05-02-previe
       destination: 'log-analytics'
       logAnalyticsConfiguration: {
         customerId: customerId
+        sharedKey: logAnalyticsWorkspace.listKeys().primarySharedKey
       }
     }
     zoneRedundant: false
