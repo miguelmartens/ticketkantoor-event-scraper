@@ -52,6 +52,7 @@ module managedEnvironment './modules/managed-environment.bicep' = {
     managedEnvironmentName: managedEnvironmentName
     workloadProfileName: workloadProfileName
     workloadProfileType: workloadProfileType
+    logAnalyticsWorkspaceName: logAnalyticsWorkspaceName
   }
 }
 
