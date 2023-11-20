@@ -24,38 +24,38 @@ jobs:
 
       - name: Bicep What-If Deployment
         run: |
-          az deployment group what-if --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} --template-file main.bicep \
+          az deployment group what-if --resource-group "${{ secrets.AZURE_RESOURCE_GROUP }}" --template-file main.bicep \
           --parameters \
-            logAnalyticsWorkspaceName=${{ secrets.LOG_ANALYTICS_WORKSPACE_NAME }} \
-            managedEnvironmentName=${{ secrets.MANAGED_ENVIRONMENT_NAME }} \
-            jobName=${{ secrets.JOB_NAME }} \
-            cronExpression=${{ secrets.CRON_EXPRESSION }} \
-            image=${{ secrets.IMAGE }} \
-            ticketkantoorEmail=${{ secrets.TICKETKANTOOR_EMAIL }} \
-            ticketkantoorPassword=${{ secrets.TICKETKANTOOR_PASSWORD }} \
-            userObjectId=${{ secrets.USER_OBJECT_ID }} \
-            recipientEmail=${{ secrets.RECIPIENT_EMAIL }} \
-            graphApiClientId=${{ secrets.GRAPH_API_CLIENT_ID }} \
-            graphApiClientSecret=${{ secrets.GRAPH_API_CLIENT_SECRET }} \
-            graphApiTenantId=${{ secrets.GRAPH_API_TENANT_ID }} \
-            useEmailUtils=${{ secrets.USE_EMAIL_UTILS }} \
-            eventName=${{ secrets.EVENT_NAME }}
+            logAnalyticsWorkspaceName="${{ secrets.LOG_ANALYTICS_WORKSPACE_NAME }}" \
+            managedEnvironmentName="${{ secrets.MANAGED_ENVIRONMENT_NAME }}" \
+            jobName="${{ secrets.JOB_NAME }}" \
+            cronExpression="${{ secrets.CRON_EXPRESSION }}" \
+            image="${{ secrets.IMAGE }}" \
+            ticketkantoorEmail="${{ secrets.TICKETKANTOOR_EMAIL }}" \
+            ticketkantoorPassword="${{ secrets.TICKETKANTOOR_PASSWORD }}" \
+            userObjectId="${{ secrets.USER_OBJECT_ID }}" \
+            recipientEmail="${{ secrets.RECIPIENT_EMAIL }}" \
+            graphApiClientId="${{ secrets.GRAPH_API_CLIENT_ID }}" \
+            graphApiClientSecret="${{ secrets.GRAPH_API_CLIENT_SECRET }}" \
+            graphApiTenantId="${{ secrets.GRAPH_API_TENANT_ID }}" \
+            useEmailUtils="${{ secrets.USE_EMAIL_UTILS }}" \
+            eventName="${{ secrets.EVENT_NAME }}"
 
       - name: Deploy to Azure using Bicep
         run: |
-          az deployment group create --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} --template-file main.bicep \
+          az deployment group create --resource-group "${{ secrets.AZURE_RESOURCE_GROUP }}" --template-file main.bicep \
           --parameters \
-            logAnalyticsWorkspaceName=${{ secrets.LOG_ANALYTICS_WORKSPACE_NAME }} \
-            managedEnvironmentName=${{ secrets.MANAGED_ENVIRONMENT_NAME }} \
-            jobName=${{ secrets.JOB_NAME }} \
-            cronExpression=${{ secrets.CRON_EXPRESSION }} \
-            image=${{ secrets.IMAGE }} \
-            ticketkantoorEmail=${{ secrets.TICKETKANTOOR_EMAIL }} \
-            ticketkantoorPassword=${{ secrets.TICKETKANTOOR_PASSWORD }} \
-            userObjectId=${{ secrets.USER_OBJECT_ID }} \
-            recipientEmail=${{ secrets.RECIPIENT_EMAIL }} \
-            graphApiClientId=${{ secrets.GRAPH_API_CLIENT_ID }} \
-            graphApiClientSecret=${{ secrets.GRAPH_API_CLIENT_SECRET }} \
-            graphApiTenantId=${{ secrets.GRAPH_API_TENANT_ID }} \
-            useEmailUtils=${{ secrets.USE_EMAIL_UTILS }} \
-            eventName=${{ secrets.EVENT_NAME }}
+            logAnalyticsWorkspaceName="${{ secrets.LOG_ANALYTICS_WORKSPACE_NAME }}" \
+            managedEnvironmentName="${{ secrets.MANAGED_ENVIRONMENT_NAME }}" \
+            jobName="${{ secrets.JOB_NAME }}" \
+            cronExpression="${{ secrets.CRON_EXPRESSION }}" \
+            image="${{ secrets.IMAGE }}" \
+            ticketkantoorEmail="${{ secrets.TICKETKANTOOR_EMAIL }}" \
+            ticketkantoorPassword="${{ secrets.TICKETKANTOOR_PASSWORD }}" \
+            userObjectId="${{ secrets.USER_OBJECT_ID }}" \
+            recipientEmail="${{ secrets.RECIPIENT_EMAIL }}" \
+            graphApiClientId="${{ secrets.GRAPH_API_CLIENT_ID }}" \
+            graphApiClientSecret="${{ secrets.GRAPH_API_CLIENT_SECRET }}" \
+            graphApiTenantId="${{ secrets.GRAPH_API_TENANT_ID }}" \
+            useEmailUtils="${{ secrets.USE_EMAIL_UTILS }}" \
+            eventName="${{ secrets.EVENT_NAME }}"
