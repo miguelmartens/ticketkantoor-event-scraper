@@ -1,5 +1,5 @@
 # Use a specific version of selenium/standalone-chrome for predictable builds
-FROM selenium/standalone-chrome:119.0-20231110
+FROM selenium/standalone-chrome:119.0-20231122
 
 # Switch to root user to install packages and add a new user
 USER root
